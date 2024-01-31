@@ -1,0 +1,39 @@
+﻿version: '3.4'
+
+services:
+  
+  enliq-ram-admin:
+    container_name: icl-ram-admin
+    build:
+      context: .
+      args:
+        NUGET_URL: https://nuget.pkg.github.com/loodos/index.json
+        NUGET_TOKEN: {{GITHUB_PAT_TOKEN}}
+      dockerfile: src/EIQ.RAM.AdminHost/Dockerfile
+    ports:
+      - "5021:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+      ASPNETCORE_URLS: http://*:80
+    networks:
+      - loodos-icl-network
+
+  enliq-ram-api:
+    container_name: enliq-ram-api
+    build:
+      context: .
+      args:
+        NUGET_URL: https://nuget.pkg.github.com/loodos/index.json
+        NUGET_TOKEN: {{GITHUB_PAT_TOKEN}}
+      dockerfile: src/EIQ.RAM.ApiHost/Dockerfile
+    ports:
+      - "5022:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+      ASPNETCORE_URLS: http://*:80
+    networks:
+      - loodos-icl-network
+
+networks:
+  loodos-icl-network:
+    external: true

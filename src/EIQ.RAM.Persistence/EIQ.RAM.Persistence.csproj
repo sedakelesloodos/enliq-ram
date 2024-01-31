@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+<ItemGroup>
+      <PackageReference Include="Loodos.Apm" Version="0.2.2" />
+    </ItemGroup>
+        <ItemGroup>
+      <PackageReference Include="MongoDB.Bson" Version="2.22.0" />
+      <PackageReference Include="MongoDB.Driver" Version="2.22.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.11" />
+    
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+        <ProjectReference Include="..\EIQ.RAM.Application\EIQ.RAM.Application.csproj" />
+    </ItemGroup>
+</Project>
